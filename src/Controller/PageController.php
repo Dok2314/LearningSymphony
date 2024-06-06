@@ -10,8 +10,6 @@ class PageController extends AbstractController
 {
     public function home(): Response
     {
-        return $this->render('page/index.html.twig', [
-            'controller_name' => 'PageController',
-        ]);
+        return $this->render('page/index.html.twig');
     }
 }

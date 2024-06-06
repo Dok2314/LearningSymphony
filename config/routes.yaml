@@ -4,6 +4,22 @@ controllers:
         namespace: App\Controller
     type: attribute
 
-home_page:
+home:
     path: /
     controller: App\Controller\PageController::home
+
+my_videos:
+    path: /my_videos
+    controller: App\Controller\VideoController::myVideos
+
+category:
+    path: /category
+    controller: App\Controller\CategoryController::index
+
+add_video:
+    path: /add_video
+    controller: App\Controller\VideoController::addVideo
+
+add_category:
+    path: /add_category
+    controller: App\Controller\CategoryController::addCategory
