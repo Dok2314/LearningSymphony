@@ -4,6 +4,6 @@ controllers:
         namespace: App\Controller
     type: attribute
 
-index:
+home_page:
     path: /
-    controller: App\Controller\TestController::index
+    controller: App\Controller\PageController::home

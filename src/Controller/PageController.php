@@ -6,12 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class TestController extends AbstractController
+class PageController extends AbstractController
 {
-    public function index(): Response
+    public function home(): Response
     {
-        return $this->render('test/index.html.twig', [
-            'a' => 45124
+        return $this->render('page/index.html.twig', [
+            'controller_name' => 'PageController',
         ]);
     }
 }
