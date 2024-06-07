@@ -26,6 +26,9 @@ class Page
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
+    #[ORM\Column(type: Types::BOOLEAN)]
+    private bool $active = true;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -77,5 +80,22 @@ class Page
         $this->content = $content;
 
         return $this;
+    }
+
+    public function getActive(): bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(bool $active): static
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    public function isActive(): ?bool
+    {
+        return $this->active;
     }
 }

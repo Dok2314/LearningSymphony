@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block main_content %}
-    <h1>Главная страница</h1>
+    <h1>{{ homePage.title }}</h1>
+
+    {{ homePage.content }}
 {% endblock %}
