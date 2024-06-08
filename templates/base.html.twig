@@ -14,6 +14,7 @@
         {% endblock %}
     </head>
     <body>
+
     <header>
         {% block header %}
             <div class="header_logo">
@@ -26,9 +27,18 @@
                 <li><a href="{{ path('my_videos') }}">Мои видео</a></li>
             </nav>
 
-            <button class="green">Войти</button>
+            <div class="auth-buttons">
+                {% if app.user %}
+                    <a href="{{ path('app_logout') }}"><button class="btn btn-warning">Выйти</button></a>
+                {% else %}
+                    <a href="{{ path('app_login') }}"><button class="btn btn-success">Войти</button></a>
+                    <a href="{{ path('app_register') }}"><button class="btn btn-primary">Зарегистрироваться</button></a>
+                {% endif %}
+            </div>
         {% endblock %}
     </header>
+
+
 
     <div class="center_block_main">
         <aside>
@@ -45,15 +55,12 @@
         </aside>
 
         <main>
-            {% block main_content %}
+            {% block body %}
 
             {% endblock %}
         </main>
     </div>
 
     <footer></footer>
-
-        {% block body %}
-        {% endblock %}
     </body>
 </html>
