@@ -2,4 +2,15 @@
 
 {% block main_content %}
     <h1>Videos</h1>
+
+    {% for video in videos %}
+        <h4>
+            <a href="{{ path('show_video', {'youtube_id': video.getYoutubeId()}) }}">
+                {{ video.getTitle() }}
+            </a>
+        </h4>
+
+        <iframe width="250" height="125" src="https://www.youtube.com/embed/{{ video.getYoutubeId() }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <hr>
+    {% endfor %}
 {% endblock %}

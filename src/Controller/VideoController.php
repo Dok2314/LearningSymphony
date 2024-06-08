@@ -2,15 +2,26 @@
 
 namespace App\Controller;
 
+use App\Services\VideoService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
 
 class VideoController extends AbstractController
 {
+    public function __construct(private readonly VideoService $videoService)
+    {
+    }
+
     public function myVideos(): Response
     {
-        return $this->render('video/index.html.twig');
+        $videos = $this->videoService->getVideos();
+        return $this->render('video/index.html.twig', compact('videos'));
+    }
+
+    public function showVideo($youtube_id)
+    {
+        $video = $this->videoService->findVideo($youtube_id);
+        return $this->render('video/video.html.twig', compact('video'));
     }
 
     public function addVideo()
