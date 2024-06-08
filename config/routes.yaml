@@ -27,3 +27,8 @@ add_category:
 show_video:
     path: /show_video/{youtube_id}
     controller: App\Controller\VideoController::showVideo
+
+store_video:
+    path: /add_video
+    methods: [POST]
+    controller: App\Controller\VideoController::store

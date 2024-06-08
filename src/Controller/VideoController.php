@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Services\VideoService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 class VideoController extends AbstractController
 {
@@ -27,5 +28,10 @@ class VideoController extends AbstractController
     public function addVideo()
     {
         return $this->render('video/add_video.htm.twig');
+    }
+
+    public function store(Request $request)
+    {
+
     }
 }

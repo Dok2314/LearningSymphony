@@ -1,5 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block main_content %}
-    <h1>Add Category</h1>
+    <h1>Add Video</h1>
+
+    <form action="{{ path('store_video') }}" method="post">
+        <div class="form-group mb-4">
+            <label for="title" class="mb-2">Title</label>
+            <input type="text" name="title" id="title" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
 {% endblock %}
